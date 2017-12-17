@@ -1,0 +1,25 @@
+* C:\Users\HP\Desktop\ADVD\testing.asc
+M2 N007 N009 0 0 NMOS l=1u w=10u
+M3 N009 N009 0 0 NMOS l=1u w=20u
+M4 N005 N009 0 0 NMOS l=1u w=10u
+M5 N002 N006 N007 0 NMOS l=1u w=10u
+M6 N003 N008 N007 0 NMOS l=1u w=10u
+M7 N002 N002 N001 N001 PMOS l=1u w=5u
+M9 N003 N002 N001 N001 PMOS l=1u w=5u
+I1 N001 N009 500µ
+M8 N005 N003 N001 N001 PMOS l=1u w=20u
+R1 N004 N003 3000
+C1 N005 N004 145f
+C2 N005 0 500f
+V1 N001 0 2.5
+V2 N006 0 SIN(1.5 10m 1000 0 0 0)
+V3 N008 0 SIN(1.5 -10m 1000 0 0 0)
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.mos
+.inc T92Y_180nM.lib
+;.op
+;.tran 0 0.1 0 0.01
+.ac dec 100 1 1MEG
+.backanno
+.end
